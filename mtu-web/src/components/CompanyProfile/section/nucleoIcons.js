@@ -19,18 +19,11 @@ function NucleoIcons() {
               >
                 <h2 className="title">Product</h2>
                 <h5 className="description">
-                  Mahkota Teknologi mengutamakan keamanan dan privasi sebagai
-                  nilai inti perusahaan. Berkomitmen untuk melindungi data dan
-                  informasi dengan menggunakan teknologi canggih serta kebijakan
-                  keamanan yang ketat.
+                  Sorte Systegra mengutamakan keamanan dan privasi sebagai nilai inti perusahaan.
+                  Berkomitmen untuk melindungi data dan informasi dengan menggunakan teknologi
+                  canggih serta kebijakan keamanan yang ketat.
                 </h5>
-                <Button
-                  className="btn-round"
-                  color="info"
-                  href="/"
-                  size="lg"
-                  target="_blank"
-                >
+                <Button className="btn-round" color="info" href="/" size="lg" target="_blank">
                   View More
                 </Button>
               </motion.div>

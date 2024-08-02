@@ -50,7 +50,7 @@ function Footer({ company, links }) {
         <Link href={href} target="_blank">
           <SoftTypography variant="button" fontWeight="medium">
             {/* &nbsp;{name}&nbsp; */}
-            &nbsp;MTU DEV&nbsp;
+            &nbsp;SSP DEV&nbsp;
           </SoftTypography>
         </Link>
         {/* , distributed by{" "}
@@ -86,9 +86,9 @@ function Footer({ company, links }) {
 
 // Setting default values for the props of Footer
 Footer.defaultProps = {
-  company: { href: "https://www.creative-tim.com/", name: "MTU DEV" },
+  company: { href: "https://www.creative-tim.com/", name: "SSP DEV" },
   links: [
-    { href: "https://www.creative-tim.com/", name: "MTU DEV" },
+    { href: "https://www.creative-tim.com/", name: "SSP DEV" },
     { href: "https://www.creative-tim.com/presentation", name: "About Us" },
     { href: "https://www.creative-tim.com/blog", name: "Blog" },
     { href: "https://www.creative-tim.com/license", name: "License" },

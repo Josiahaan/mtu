@@ -72,7 +72,7 @@ function DefaultNavbar({ transparent, light, action }) {
       >
         <SoftBox component={Link} to="/" py={transparent ? 1.5 : 0.75} lineHeight={1}>
           <SoftTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
-            MTU DEV
+            SSP DEV
           </SoftTypography>
         </SoftBox>
         <SoftBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>

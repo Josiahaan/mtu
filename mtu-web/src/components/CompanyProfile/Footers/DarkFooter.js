@@ -15,7 +15,7 @@ function DarkFooter() {
                 href=""
                 target="_blank"
               >
-                MTU DEV
+                SSP DEV
               </a>
             </li>
             <li>
@@ -42,14 +42,14 @@ function DarkFooter() {
             href=""
             target="_blank"
           >
-            MTU
+            SSP
           </a>
           . Coded by{" "}
           <a
             href=""
             target="_blank"
           >
-            MTU DEV
+            SSP DEV
           </a>
           .
         </div>

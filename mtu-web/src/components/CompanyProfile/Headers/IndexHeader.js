@@ -44,10 +44,11 @@ function IndexHeader() {
             <img
               alt="..."
               className="n-logo"
-              src={require("assets/images/now-logo.png")}
+              src={require("assets/images/ssp-bg-remove-2.png")}
+              style={{width: '100px', height: '50px'}}
             ></img>
-            <h1 className="h1-seo">MTU</h1>
-            <h3>Mahkota Teknologi Utama</h3>
+            <h1 className="h1-seo">SSP</h1>
+            <h3>Sorte Systegra Prospera</h3>
           </motion.div>
           </div>
           <h6 className="category category-absolute">
@@ -64,7 +65,7 @@ function IndexHeader() {
                 src={require("assets/img/invision-white-slim.png")}
               ></img>
             </a> */}
-            Coded by MTU DEV{" "}
+            Coded by SSP DEV{" "}
             {/* <a
               href="https://www.creative-tim.com?ref=nukr-index-header"
               target="_blank"

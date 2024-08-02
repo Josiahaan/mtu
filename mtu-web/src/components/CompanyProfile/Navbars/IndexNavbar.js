@@ -62,7 +62,7 @@ function IndexNavbar() {
               }}
             >
               <Link to="navbar-section" smooth={true} duration={1500}>
-                Mahkota Teknologi Utama
+                Sorte Systegra Prospera
               </Link>
             </NavbarBrand>
             {/* <NavbarBrand

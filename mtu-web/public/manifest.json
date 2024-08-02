@@ -1,11 +1,11 @@
 {
-  "short_name": "MTU Dashboard",
-  "name": "MTU Dashboard",
+  "short_name": "SSP Dashboard",
+  "name": "SSP Dashboard",
   "icons": [
     {
-      "src": "favicon.png",
+      "src": "ssp-bg-blue.jpeg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/png"
+      "type": "image/jpeg"
     }
   ],
   "start_url": ".",
