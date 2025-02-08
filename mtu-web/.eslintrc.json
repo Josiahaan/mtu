@@ -19,7 +19,13 @@
     "jsx-a11y/alt-text": "off",
     "react/react-in-jsx-scope": "off",
     "react/display-name": "off",
-    "react/no-unescaped-entities": 0
+    "react/no-unescaped-entities": 0,
+    "react/no-unknown-property": [
+      "error",
+      {
+        "ignore": ["object", "intensity", "position", "angle"]
+      }
+    ]
   },
   "settings": {
     "react": {

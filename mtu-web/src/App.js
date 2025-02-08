@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Icon from "@mui/material/Icon";
@@ -13,8 +13,8 @@ import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 import routes from "routes";
 import { useSoftUIController, setMiniSidenav, setOpenConfigurator } from "context";
-// import brand from "assets/images/logo-ct.png";
 import brand from "assets/images/ssp-bg-remove.png";
+import { Navigate } from "react-router-dom";
 
 export default function App() {
   const [controller, dispatch] = useSoftUIController();
@@ -58,17 +58,19 @@ export default function App() {
   }, [pathname]);
 
   const getRoutes = (allRoutes) =>
-    allRoutes.map((route) => {
-      if (route.collapse) {
-        return getRoutes(route.collapse);
-      }
-
-      if (route.route) {
-        return <Route exact path={route.route} element={route.component} key={route.key} />;
-      }
-
-      return null;
-    });
+    allRoutes
+      .filter((route) => route)
+      .flatMap((route) => {
+        if (route.collapse) {
+          return getRoutes(route.collapse);
+        }
+  
+        if (route.route) {
+          return <Route exact path={route.route} element={route.component} key={route.key} />;
+        }
+  
+        return [];
+      });
 
   const configsButton = (
     <SoftBox
@@ -95,7 +97,14 @@ export default function App() {
   );
 
   const isCompanyProfile = pathname === "/company-profile";
-
+  const isProduct = pathname === "/product";
+  const isAirTruck = pathname === "/acsl/airtruck";
+  const isFi4 = pathname === "/acsl/fi4";
+  const isPF2 = pathname === "/acsl/pf2";
+  const isDisaster = pathname === "/acsl/disaster";
+  const isInspection = pathname === "/acsl/inspection";
+  const isSoten = pathname === "/acsl/soten";
+  const isUseCases = pathname === "/acsl/soten";
   return direction === "rtl" ? (
     <CacheProvider value={rtlCache}>
       <ThemeProvider theme={themeRTL}>
@@ -110,11 +119,12 @@ export default function App() {
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
             />
-            <Configurator />
+            {/* <Configurator /> */}
             {configsButton}
           </>
         )}
-        {layout === "vr" && <Configurator />}
+        {layout === "vr"}
+        {/* {layout === "vr" && <Configurator />} */}
         <Routes>
           {getRoutes(routes)}
           <Route path="*" element={<Navigate to="/dashboard" />} />
@@ -123,9 +133,9 @@ export default function App() {
     </CacheProvider>
   ) : (
     <ThemeProvider theme={theme}>
-      {layout === "dashboard" && !isCompanyProfile && (
+      {layout === "dashboard" && !isCompanyProfile && !isProduct && !isAirTruck && !isFi4 && !isPF2 && !isDisaster && !isInspection && !isSoten && !isUseCases && (
         <>
-        <CssBaseline />
+          <CssBaseline />
           <Sidenav
             color={sidenavColor}
             brand={brand}
@@ -134,11 +144,11 @@ export default function App() {
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
           />
-          <Configurator />
+          {/* <Configurator /> */}
           {configsButton}
         </>
       )}
-      {layout === "vr" && <Configurator />}
+      {layout === "vr"}
       <Routes>
         {getRoutes(routes)}
         <Route path="*" element={<Navigate to="/company-profile" />} />

@@ -16,7 +16,7 @@ import configs from "examples/Charts/RadarChart/configs";
 import colors from "assets/theme/base/colors";
 import rgba from "assets/theme/functions/rgba";
 
-function RadarChart({ title, description, chart }) {
+function RadarChart({ title = "", description = "", chart }) {
   const chartDatasets = chart.datasets
     ? chart.datasets.map((dataset) => ({
         ...dataset,
@@ -59,10 +59,10 @@ function RadarChart({ title, description, chart }) {
 }
 
 // Setting default values for the props of RadarChart
-RadarChart.defaultProps = {
-  title: "",
-  description: "",
-};
+// RadarChart.defaultProps = {
+//   title: "",
+//   description: "",
+// };
 
 // Typechecking props for the RadarChart
 RadarChart.propTypes = {

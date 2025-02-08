@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import SoftBoxRoot from "components/SoftBox/SoftBoxRoot";
 
 const SoftBox = forwardRef(
-  ({ variant, bgColor, color, opacity, borderRadius, shadow, ...rest }, ref) => (
+  ({ variant = "contained", bgColor = "transparent", color = "dark", opacity = 1, borderRadius = "none", shadow = "none", ...rest }, ref) => (
     <SoftBoxRoot
       {...rest}
       ref={ref}
@@ -17,14 +17,14 @@ const SoftBox = forwardRef(
 );
 
 // Setting default values for the props of SoftBox
-SoftBox.defaultProps = {
-  variant: "contained",
-  bgColor: "transparent",
-  color: "dark",
-  opacity: 1,
-  borderRadius: "none",
-  shadow: "none",
-};
+// SoftBox.defaultProps = {
+//   variant: "contained",
+//   bgColor: "transparent",
+//   color: "dark",
+//   opacity: 1,
+//   borderRadius: "none",
+//   shadow: "none",
+// };
 
 // Typechecking props for the SoftBox
 SoftBox.propTypes = {

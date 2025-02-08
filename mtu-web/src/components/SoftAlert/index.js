@@ -5,7 +5,7 @@ import SoftBox from "components/SoftBox";
 import SoftAlertRoot from "components/SoftAlert/SoftAlertRoot";
 import SoftAlertCloseIcon from "components/SoftAlert/SoftAlertCloseIcon";
 
-function SoftAlert({ color, dismissible, children, ...rest }) {
+function SoftAlert({ color = 'info', dismissible = false, children, ...rest }) {
   const [alertStatus, setAlertStatus] = useState("mount");
 
   const handleAlertStatus = () => setAlertStatus("fadeOut");
@@ -40,10 +40,10 @@ function SoftAlert({ color, dismissible, children, ...rest }) {
   return null;
 }
 
-SoftAlert.defaultProps = {
-  color: "info",
-  dismissible: false,
-};
+// SoftAlert.defaultProps = {
+//   color: "info",
+//   dismissible: false,
+// };
 
 SoftAlert.propTypes = {
   color: PropTypes.oneOf([

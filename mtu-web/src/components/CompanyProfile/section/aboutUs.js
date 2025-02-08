@@ -13,7 +13,7 @@ function AboutUs() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.5 }}
               >
-                <h2 className="title">Tentang Kami</h2>
+                <h2 className="title text-info">Tentang Kami</h2>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: 100 }}
@@ -90,13 +90,13 @@ function AboutUs() {
                       backgroundImage: "url(" + require("assets/images/mtu-biometric.png") + ")",
                     }}
                   ></div>
-                  <h3>Visi - Misi Perusahaan</h3>
-                  <h4>Visi</h4>
+                  <h3 className="title text-info">Visi - Misi Perusahaan</h3>
+                  <h4 className="text-info">Visi</h4>
                   <p>
                     Menjadi penyedia terpercaya dalam solusi teknologi keamanan dan pengawasan yang
                     inovatif.
                   </p>
-                  <h4>Misi</h4>
+                  <h4 className="text-info">Misi</h4>
                   <p>
                     1. Memberi solusi dalam memenuhi kebutuhan keamanan dan pengawasan dengan
                     menghadirkan produk berkualitas yang spesifikasinya sesuai dengan kebutuhan di

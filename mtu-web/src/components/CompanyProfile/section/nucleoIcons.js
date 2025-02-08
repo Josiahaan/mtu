@@ -2,10 +2,24 @@ import React from "react";
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
 import { motion } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import modelPath from '../../../assets/maskModel/scene.glb';
+import { useInView } from 'react-intersection-observer';
+import { Link as LinkReact } from "react-router-dom";
 
 // core components
 
+function TestingModel() {
+  const { scene } = useGLTF(modelPath);
+  return <primitive object={scene} scale={1.5} />;
+}
+
 function NucleoIcons() {
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
   return (
     <>
       <div className="section section-nucleo-icons" id="product-section">
@@ -23,7 +37,7 @@ function NucleoIcons() {
                   Berkomitmen untuk melindungi data dan informasi dengan menggunakan teknologi
                   canggih serta kebijakan keamanan yang ketat.
                 </h5>
-                <Button className="btn-round" color="info" href="/" size="lg" target="_blank">
+                <Button className="btn-round" color="info" tag={LinkReact} to="/product" size="lg">
                   View More
                 </Button>
               </motion.div>
@@ -68,7 +82,13 @@ function NucleoIcons() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1.5 }}
                 >
-                  <img alt="..." src={require("assets/images/macair3.png")}></img>
+                  <img alt="..." src={require("assets/images/scavengernobg.png")}></img>
+                  {/* <Canvas style={{ height: 300 }} camera={{ position: [2, 0, 1] }}>
+                    <ambientLight intensity={2} />
+                    <spotLight position={[10, 10, 10]} angle={0.15} />
+                    <TestingModel />
+                    <OrbitControls />
+                  </Canvas> */}
                 </motion.div>
               </Container>
             </Col>

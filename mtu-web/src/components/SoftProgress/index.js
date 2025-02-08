@@ -8,7 +8,7 @@ import SoftTypography from "components/SoftTypography";
 // Custom styles for SoftProgress
 import SoftProgressRoot from "components/SoftProgress/SoftProgressRoot";
 
-const SoftProgress = forwardRef(({ variant, color, value, label, ...rest }, ref) => (
+const SoftProgress = forwardRef(({ variant = "contained", color = "info", value = 0, label = false, ...rest }, ref) => (
   <>
     {label && (
       <SoftTypography variant="button" fontWeight="medium" color="text">
@@ -26,12 +26,12 @@ const SoftProgress = forwardRef(({ variant, color, value, label, ...rest }, ref)
 ));
 
 // Setting default values for the props of SoftProgress
-SoftProgress.defaultProps = {
-  variant: "contained",
-  color: "info",
-  value: 0,
-  label: false,
-};
+// SoftProgress.defaultProps = {
+//   variant: "contained",
+//   color: "info",
+//   value: 0,
+//   label: false,
+// };
 
 // Typechecking props for the SoftProgress
 SoftProgress.propTypes = {

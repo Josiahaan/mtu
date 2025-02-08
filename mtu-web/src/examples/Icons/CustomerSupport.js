@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import colors from "assets/theme/base/colors";
 
-function CustomerSupport({ color, size }) {
+function CustomerSupport({ color = 'dark', size = '16px'}) {
   return (
     <svg
       width={size}
@@ -44,10 +44,10 @@ function CustomerSupport({ color, size }) {
 }
 
 // Setting default values for the props of CustomerSupport
-CustomerSupport.defaultProps = {
-  color: "dark",
-  size: "16px",
-};
+// CustomerSupport.defaultProps = {
+//   color: "dark",
+//   size: "16px",
+// };
 
 // Typechecking props for the CustomerSupport
 CustomerSupport.propTypes = {

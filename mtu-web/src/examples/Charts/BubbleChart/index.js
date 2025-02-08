@@ -15,7 +15,7 @@ import SoftTypography from "components/SoftTypography";
 import configs from "examples/Charts/BubbleChart/configs";
 import colors from "assets/theme/base/colors";
 
-function BubbleChart({ title, description, height, chart }) {
+function BubbleChart({ title = '', description = '', height = "100%", chart }) {
   const chartDatasets = chart.datasets
     ? chart.datasets.map((dataset) => ({
         ...dataset,
@@ -65,11 +65,11 @@ function BubbleChart({ title, description, height, chart }) {
 }
 
 // Setting default values for the props of BubbleChart
-BubbleChart.defaultProps = {
-  title: "",
-  description: "",
-  height: "100%",
-};
+// BubbleChart.defaultProps = {
+//   title: "",
+//   description: "",
+//   height: "100%",
+// };
 
 // Typechecking props for the BubbleChart
 BubbleChart.propTypes = {

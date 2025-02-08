@@ -16,7 +16,7 @@ import gradientChartLine from "assets/theme/functions/gradientChartLine";
 import configs from "examples/Charts/LineCharts/GradientLineChart/configs";
 import colors from "assets/theme/base/colors";
 
-function GradientLineChart({ title, description, height, chart }) {
+function GradientLineChart({ title = "", description = "", height = "19.125rem", chart }) {
   const chartRef = useRef(null);
   const [chartData, setChartData] = useState({});
   const { data, options } = chartData;
@@ -74,11 +74,11 @@ function GradientLineChart({ title, description, height, chart }) {
 }
 
 // Setting default values for the props of GradientLineChart
-GradientLineChart.defaultProps = {
-  title: "",
-  description: "",
-  height: "19.125rem",
-};
+// GradientLineChart.defaultProps = {
+//   title: "",
+//   description: "",
+//   height: "19.125rem",
+// };
 
 // Typechecking props for the GradientLineChart
 GradientLineChart.propTypes = {

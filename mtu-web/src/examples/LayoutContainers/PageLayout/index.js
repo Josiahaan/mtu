@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 import SoftBox from "components/SoftBox";
 import { useSoftUIController, setLayout } from "context";
 
-function PageLayout({ background, children }) {
+function PageLayout({ background = 'default', children }) {
   const [, dispatch] = useSoftUIController();
   const { pathname } = useLocation();
 
@@ -30,9 +30,9 @@ function PageLayout({ background, children }) {
 }
 
 // Setting default values for the props for PageLayout
-PageLayout.defaultProps = {
-  background: "default",
-};
+// PageLayout.defaultProps = {
+//   background: "default",
+// };
 
 // Typechecking props for the PageLayout
 PageLayout.propTypes = {

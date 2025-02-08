@@ -15,7 +15,7 @@ import SoftTypography from "components/SoftTypography";
 import configs from "examples/Charts/BarCharts/VerticalBarChart/configs";
 import colors from "assets/theme/base/colors";
 
-function VerticalBarChart({ title, description, height, chart }) {
+function VerticalBarChart({ title = '', description = '', height = "19.125rem", chart }) {
   const chartDatasets = chart.datasets
     ? chart.datasets.map((dataset) => ({
         ...dataset,
@@ -63,11 +63,11 @@ function VerticalBarChart({ title, description, height, chart }) {
 }
 
 // Setting default values for the props of VerticalBarChart
-VerticalBarChart.defaultProps = {
-  title: "",
-  description: "",
-  height: "19.125rem",
-};
+// VerticalBarChart.defaultProps = {
+//   title: "",
+//   description: "",
+//   height: "19.125rem",
+// };
 
 // Typechecking props for the VerticalBarChart
 VerticalBarChart.propTypes = {

@@ -18,7 +18,7 @@ import "assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
 // sections for this page
 import Images from "components/CompanyProfile/section/images";
 import NucleoIcons from "components/CompanyProfile/section/nucleoIcons.js";
-import SignUp from "components/CompanyProfile/section/signUp.js";
+import ContactUs from "components/CompanyProfile/section/contactUs.js";
 import ValueCompany from "components/CompanyProfile/section/valueCompany.js";
 import AboutUs from "components/CompanyProfile/section/aboutUs";
 
@@ -44,7 +44,7 @@ function CompanyProfile() {
           <AboutUs />
           <ValueCompany />
           <NucleoIcons />
-          <SignUp />
+          <ContactUs />
         </div>
         <DarkFooter />
       </div>

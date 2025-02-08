@@ -9,7 +9,7 @@ import { Container, Row, Col } from "reactstrap";
 function Images() {
   return (
     <>
-      <div className="section section-images">
+      {/* <div className="section section-images">
         <Container>
           <Row>
             <Col md="12">
@@ -21,7 +21,7 @@ function Images() {
               <div className="hero-images-container">
                 <img
                   alt="..."
-                  src={require("assets/images/macair3.png")}
+                  src={require("assets/images/scavengernobg.png")}
                 ></img>
               </div>
               </motion.div>
@@ -33,7 +33,7 @@ function Images() {
               <div className="hero-images-container-1">
                 <img
                   alt="..."
-                  src={require("assets/images/ipad.png")}
+                  src={require("assets/images/scavengernobg.png")}
                 ></img>
               </div>
               </motion.div>
@@ -45,14 +45,14 @@ function Images() {
               <div className="hero-images-container-2" style={{paddingTop: '90px'}}>
                 <img
                   alt="..."
-                  src={require("assets/images/iphone.png")}
+                  src={require("assets/images/scavengermobilenobg.png")}
                 ></img>
               </div>
               </motion.div>
             </Col>
           </Row>
         </Container>
-      </div>
+      </div> */}
     </>
   );
 }

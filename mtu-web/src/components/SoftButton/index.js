@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import SoftButtonRoot from "components/SoftButton/SoftButtonRoot";
 
 const SoftButton = forwardRef(
-  ({ color, variant, size, circular, iconOnly, children, ...rest }, ref) => (
+  ({ color = "white", variant = "contained", size = "medium", circular = false, iconOnly = false, children, ...rest }, ref) => (
     <SoftButtonRoot
       {...rest}
       ref={ref}
@@ -22,13 +22,13 @@ const SoftButton = forwardRef(
 );
 
 // Setting default values for the props of SoftButton
-SoftButton.defaultProps = {
-  size: "medium",
-  variant: "contained",
-  color: "white",
-  circular: false,
-  iconOnly: false,
-};
+// SoftButton.defaultProps = {
+//   size: "medium",
+//   variant: "contained",
+//   color: "white",
+//   circular: false,
+//   iconOnly: false,
+// };
 
 // Typechecking props for the SoftButton
 SoftButton.propTypes = {

@@ -11,7 +11,7 @@ import pageRoutes from "page.routes";
 // Images
 import pattern from "assets/images/shapes/pattern-lines.svg";
 
-function IllustrationLayout({ color, header, title, description, illustration, children }) {
+function IllustrationLayout({ color = "info", header = "", title = "", description = "", illustration = {}, children }) {
   return (
     <PageLayout background="white">
       <DefaultNavbar
@@ -102,13 +102,13 @@ function IllustrationLayout({ color, header, title, description, illustration, c
 }
 
 // Setting default values for the props of IllustrationLayout
-IllustrationLayout.defaultProps = {
-  color: "info",
-  header: "",
-  title: "",
-  description: "",
-  illustration: {},
-};
+// IllustrationLayout.defaultProps = {
+//   color: "info",
+//   header: "",
+//   title: "",
+//   description: "",
+//   illustration: {},
+// };
 
 // Typechecking props for the IllustrationLayout
 IllustrationLayout.propTypes = {

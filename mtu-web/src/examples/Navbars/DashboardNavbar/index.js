@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import Swal from "sweetalert2";
 
 // react-router components
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
@@ -17,6 +18,7 @@ import SoftTypography from "components/SoftTypography";
 import SoftInput from "components/SoftInput";
 import Breadcrumbs from "examples/Breadcrumbs";
 import NotificationItem from "examples/Items/NotificationItem";
+import { userLogout } from "../../../store/actions/user";
 
 // Custom styles for DashboardNavbar
 import {
@@ -37,12 +39,13 @@ import {
 import team2 from "assets/images/team-2.jpg";
 import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
 
-function DashboardNavbar({ absolute, light, isMini }) {
+function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
   const [navbarType, setNavbarType] = useState();
   const [controller, dispatch] = useSoftUIController();
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator } = controller;
   const [openMenu, setOpenMenu] = useState(false);
   const route = useLocation().pathname.split("/").slice(1);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Setting the navbar type
@@ -74,6 +77,26 @@ function DashboardNavbar({ absolute, light, isMini }) {
   const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
   const handleOpenMenu = (event) => setOpenMenu(event.currentTarget);
   const handleCloseMenu = () => setOpenMenu(false);
+  const handleSignOut = () => {
+    localStorage.clear();
+    // dispatch(userLogout());
+    Swal.fire({
+      icon: "success",
+      iconColor: "#57240f",
+      title: "Logout Success!",
+      color: "#080504",
+      background: "#ebd7bb",
+      confirmButtonColor: "#a35831",
+    }).then(() => {
+      navigate("/authentication/sign-in");
+    });
+  };
+  // useEffect(() => {
+  //   const role = localStorage.getItem("role");
+  //   if (!role || (role !== "Super Admin" && role !== "Admin")) {
+  //     navigate("/authentication/sign-in");
+  //   }
+  // }, []);
 
   // Render the notifications menu
   const renderMenu = () => (
@@ -134,7 +157,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
             </SoftBox>
             <SoftBox color={light ? "white" : "inherit"}>
               <Link to="/authentication/sign-in">
-                <IconButton sx={navbarIconButton} size="small">
+                <IconButton sx={navbarIconButton} size="small" onClick={handleSignOut}>
                   <Icon
                     sx={({ palette: { dark, white } }) => ({
                       color: light ? white.main : dark.main,
@@ -147,7 +170,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
                     fontWeight="medium"
                     color={light ? "white" : "dark"}
                   >
-                    Sign in
+                    Sign Out
                   </SoftTypography>
                 </IconButton>
               </Link>
@@ -190,11 +213,11 @@ function DashboardNavbar({ absolute, light, isMini }) {
 }
 
 // Setting default values for the props of DashboardNavbar
-DashboardNavbar.defaultProps = {
-  absolute: false,
-  light: false,
-  isMini: false,
-};
+// DashboardNavbar.defaultProps = {
+//   absolute: false,
+//   light: false,
+//   isMini: false,
+// };
 
 // Typechecking props for the DashboardNavbar
 DashboardNavbar.propTypes = {

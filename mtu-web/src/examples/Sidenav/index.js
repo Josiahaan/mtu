@@ -22,7 +22,7 @@ import SidenavRoot from "examples/Sidenav/SidenavRoot";
 import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
 import { useSoftUIController, setMiniSidenav } from "context";
 
-function Sidenav({ color, brand, brandName, routes, ...rest }) {
+function Sidenav({ color = 'info', brand = '', brandName, routes, ...rest }) {
   const [controller, dispatch] = useSoftUIController();
   const { miniSidenav, transparentSidenav } = controller;
   const location = useLocation();
@@ -157,10 +157,10 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
 }
 
 // Setting default values for the props of Sidenav
-Sidenav.defaultProps = {
-  color: "info",
-  brand: "",
-};
+// Sidenav.defaultProps = {
+//   color: "info",
+//   brand: "",
+// };
 
 // Typechecking props for the Sidenav
 Sidenav.propTypes = {

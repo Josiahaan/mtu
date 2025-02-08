@@ -16,7 +16,7 @@ import DefaultNavbarLink from "examples/Navbars/DefaultNavbar/DefaultNavbarLink"
 import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMobile";
 import breakpoints from "assets/theme/base/breakpoints";
 
-function DefaultNavbar({ transparent, light, action }) {
+function DefaultNavbar({ transparent = false, light = false, action = false }) {
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
 
@@ -139,11 +139,11 @@ function DefaultNavbar({ transparent, light, action }) {
 }
 
 // Setting default values for the props of DefaultNavbar
-DefaultNavbar.defaultProps = {
-  transparent: false,
-  light: false,
-  action: false,
-};
+// DefaultNavbar.defaultProps = {
+//   transparent: false,
+//   light: false,
+//   action: false,
+// };
 
 // Typechecking props for the DefaultNavbar
 DefaultNavbar.propTypes = {

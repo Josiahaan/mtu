@@ -16,7 +16,7 @@ import gradientChartLine from "assets/theme/functions/gradientChartLine";
 import configs from "examples/Charts/MixedChart/configs";
 import colors from "assets/theme/base/colors";
 
-function MixedChart({ title, description, height, chart }) {
+function MixedChart({ title = "", description = "", height = "19.125rem", chart }) {
   const chartRef = useRef(null);
   const [chartData, setChartData] = useState({});
   const { data, options } = chartData;
@@ -132,11 +132,11 @@ function MixedChart({ title, description, height, chart }) {
 }
 
 // Setting default values for the props of MixedChart
-MixedChart.defaultProps = {
-  title: "",
-  description: "",
-  height: "19.125rem",
-};
+// MixedChart.defaultProps = {
+//   title: "",
+//   description: "",
+//   height: "19.125rem",
+// };
 
 // Typechecking props for the MixedChart
 MixedChart.propTypes = {

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import colors from "assets/theme/base/colors";
 
-function Settings({ color, size }) {
+function Settings({ color = 'dark', size = '16px' }) {
   return (
     <svg
       width={size}
@@ -44,10 +44,10 @@ function Settings({ color, size }) {
 }
 
 // Setting default values for the props of Settings
-Settings.defaultProps = {
-  color: "dark",
-  size: "16px",
-};
+// Settings.defaultProps = {
+//   color: "dark",
+//   size: "16px",
+// };
 
 // Typechecking props for the Settings
 Settings.propTypes = {

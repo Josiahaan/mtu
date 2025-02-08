@@ -7,7 +7,15 @@ import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 import typography from "assets/theme/base/typography";
 
-function Footer({ company, links }) {
+function Footer({
+  company = { href: "", name: "SSP DEV" },
+  links = [
+    { href: "", name: "SSP DEV" },
+    { href: "", name: "About Us" },
+    { href: "", name: "Blog" },
+    { href: "", name: "License" },
+  ],
+}) {
   const { href, name } = company;
   const { size } = typography;
 
@@ -85,15 +93,15 @@ function Footer({ company, links }) {
 }
 
 // Setting default values for the props of Footer
-Footer.defaultProps = {
-  company: { href: "https://www.creative-tim.com/", name: "SSP DEV" },
-  links: [
-    { href: "https://www.creative-tim.com/", name: "SSP DEV" },
-    { href: "https://www.creative-tim.com/presentation", name: "About Us" },
-    { href: "https://www.creative-tim.com/blog", name: "Blog" },
-    { href: "https://www.creative-tim.com/license", name: "License" },
-  ],
-};
+// Footer.defaultProps = {
+//   company: { href: "", name: "SSP DEV" },
+//   links: [
+//     { href: "", name: "SSP DEV" },
+//     { href: "", name: "About Us" },
+//     { href: "", name: "Blog" },
+//     { href: "", name: "License" },
+//   ],
+// };
 
 // Typechecking props for the Footer
 Footer.propTypes = {

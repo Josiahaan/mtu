@@ -14,6 +14,9 @@ import logoWebDev from "assets/images/small-logos/logo-webdev.svg";
 import logoXD from "assets/images/small-logos/logo-xd.svg";
 import apple from "assets/images/apple.png";
 
+const role = localStorage.getItem("role");
+const adminAccess = role === "Super Admin" || role === "Admin";
+
 function Completion({ value, color }) {
   return (
     <SoftBox display="flex" alignItems="center">
@@ -40,8 +43,8 @@ const projectsTableData = {
     { name: "status", align: "left" },
     { name: "start", align: "center"},
     { name: "completion", align: "center" },
-    { name: "action", align: "center" },
-  ],
+    adminAccess && { name: "action", align: "center" },
+  ].filter(Boolean),
 
   rows: [
     {

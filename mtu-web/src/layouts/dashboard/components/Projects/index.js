@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -13,8 +14,11 @@ import Table from "examples/Tables/Table";
 import data from "layouts/dashboard/components/Projects/data";
 
 function Projects() {
-  const { columns, rows } = data();
+  const { columns, rows, reminders } = data();
   const [menu, setMenu] = useState(null);
+  const dispatch = useDispatch();
+  const [reminderThisMonth, setReminderThisMonth] = useState(0);
+  // const [reminders, setReminders] = useState([]);
 
   const openMenu = ({ currentTarget }) => setMenu(currentTarget);
   const closeMenu = () => setMenu(null);
@@ -40,12 +44,32 @@ function Projects() {
     </Menu>
   );
 
+  const parseDate = (dateStr) => {
+    const [day, month, year] = dateStr.split("/").map(Number);
+    return new Date(year, month - 1, day);
+  };
+
+  useEffect(() => {
+    const currentDate = new Date();
+    const currentMonth = currentDate.getMonth();
+    const currentYear = currentDate.getFullYear();
+
+    const remindersThisMonth = reminders.filter((reminder) => {
+      const reminderDate = parseDate(reminder.expiredDate);
+      return (
+        reminderDate.getMonth() === currentMonth && 
+        reminderDate.getFullYear() === currentYear
+      );
+    });
+
+    setReminderThisMonth(remindersThisMonth.length);
+  }, [reminders]);
   return (
     <Card>
       <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
         <SoftBox>
           <SoftTypography variant="h6" gutterBottom>
-            Projects
+            Payment Reminder
           </SoftTypography>
           <SoftBox display="flex" alignItems="center" lineHeight={0}>
             <Icon
@@ -58,7 +82,7 @@ function Projects() {
               done
             </Icon>
             <SoftTypography variant="button" fontWeight="regular" color="text">
-              &nbsp;<strong>30 done</strong> this month
+              &nbsp;<strong>{reminderThisMonth} reminder</strong> this month
             </SoftTypography>
           </SoftBox>
         </SoftBox>
